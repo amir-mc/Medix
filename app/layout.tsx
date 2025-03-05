@@ -31,7 +31,7 @@ export default function RootLayout({
         <div>
           <div><Leftbar/></div>
           <div>{children}</div>
-          <div><Rightbar/></div>
+          <div><Rightbar/></div> 
         </div>
       </body>
     </html>
