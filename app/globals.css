@@ -1,7 +1,13 @@
-@import "tailwindcss/preflight";
-@tailwind utilities;
-@tailwind utilities;
 
+@import "tailwindcss";
+@theme{
+  --breakpoint-xsm:500px;
+  --breakpoint-sm:600px;
+  --breakpoint-md:690px;
+  --breakpoint-lg:980px;
+  --breakpoint-xl:1078px;
+  --breakpoint-xxl:1265px;
+}
 body {
   color: #ededed;
   background: black;
