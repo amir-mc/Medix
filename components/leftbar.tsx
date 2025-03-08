@@ -76,7 +76,7 @@ const Leftbar = () => {
                                 <span className="text-sm text-gray-500">@amir</span>
                             </div>
                     </div>
-                    <div className="hidden xxl:block cursor-pointer font-bold">
+                     <div className="hidden xxl:block cursor-pointer font-bold">
                             ...
                         </div>
            </div>
