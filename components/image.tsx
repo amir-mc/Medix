@@ -3,20 +3,25 @@ import { IKImage } from "imagekitio-next";
 type imagetype={
 
     path:string,
-    width:string,
-    height:string,
+    w:number,
+    h:number,
     alt:string,
     className:string,
     tr?:boolean
 }
 const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
-const Imagetoolkit = ({path,width,height,alt,tr,className}) => {
+const Imagetoolkit = ({path,w,h,alt,tr,className}) => {
     return ( 
-        <IKImage urlEndpoint={urlEndpoint}
-        {...(tr?{transformation:[{width:width,height:height}]}
-            :{width:width,height:height}
-        )}
-        path={path} className={className} alt={alt}/>
+        <IKImage
+      urlEndpoint={urlEndpoint}
+      path={path}
+      {...(tr
+        ? { transformation: [{ width: `${w}`, height: `${h}` }] }
+        : { width: w, height: h })}
+      lqip={{ active: true, quality: 20 }}
+      alt={alt}
+      className={className}
+    />
      );
 }
  
