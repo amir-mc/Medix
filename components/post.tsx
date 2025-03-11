@@ -1,5 +1,6 @@
 import Imagetoolkit from "./image";
 import PostDetails from "./postdetail";
+import Posttraction from "./postinter";
 
 const PostList = () => {
     return ( 
@@ -30,6 +31,7 @@ const PostList = () => {
                 <Imagetoolkit path="general/postImg.jpeg" alt='avatar'  w={600} h={600} />
 
             </div>
+            <Posttraction/>
         </div>
      );
 }
