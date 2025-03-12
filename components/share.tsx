@@ -1,7 +1,7 @@
 const Share = () => {
     return ( 
         <div>
-            
+            avarat
         </div>
      );
 }
