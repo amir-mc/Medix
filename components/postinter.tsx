@@ -16,7 +16,7 @@ const Posttraction = () => {
             <Heart onClick={() => IsactiveLove((prev) => !prev)}  className={activeLove?'fill-red-700':''}/>200
             </div>
             <div className=" cursor-pointer">
-            <Repeat2/> 20
+            <Repeat2/> 45
             </div>
             
             <ChartNoAxesColumn/>
