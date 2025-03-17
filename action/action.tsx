@@ -1,29 +1,26 @@
 "use server"
 
-import ImageKit from "imagekit";
+import { imagekits } from "@/utils/utils";
 
 
-const imagekit = new ImageKit({
-    publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY!,
-    privateKey: process.env.PRIVATE_KEY!,
-    urlEndpoint: process.env.NEXT_PUBLIC_URL_ENDPOINT!,
-  });
-  
-export const ShareAction =async(formdata:FormData)=>{
+export const ShareAction =async(formdata:FormData , setting:{type: "original" | "wide" | "square"; sensitive: boolean})=>{
     const file = formdata.get('file') as File
     const des = formdata.get('des') as String
 
     const bytes=await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
-
-    imagekit.upload(
+    const transformation = `w-600 ${setting.type==="square" ? "ar-1-1" : setting.type==="wide" ? "ar-16-9": ""}`
+    imagekits.upload(
         {
             file:buffer,
             fileName:file.name,
             folder:"/posts",
             transformation:{
-                pre:"w-600"
+                pre:transformation
             },
+            customMetadata:{
+                sensitive:setting.sensitive
+            }
         },
         function(error,result){
             if(error) console.log(error)

@@ -24,15 +24,22 @@ const Share = () => {
     }
     const PrviewImg=media ? URL.createObjectURL(media):null
     return ( 
-        <form className="p-4 flex gap-4" action={ShareAction}>
+        <form className="p-4 flex gap-4" action={formdata=>ShareAction(formdata,setting)}>
                 <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                    <Imagetoolkit path='general/userImg.jpeg' alt='profile' w={100} h={100} />
-                </div>
+                    <Imagetoolkit path='general/userImg.jpeg' alt='profile' w={100} h={100} tr={true} className='' />
+                </div> 
                 <div className="flex-1 flex flex-col gap-4">
                     <input type="text" name="des" placeholder="Looking for something "  className="bg-transparent outline-none placeholder:text-gray-500"/>
                 {PrviewImg &&
                     <div className="relative rounded-2xl overflow-hidden">
-                        <NextImage src={PrviewImg} alt="pre" width={600} height={600} />
+                        <NextImage   className={`w-full ${
+                setting.type === "original"
+                  ? "h-full object-contain"
+                  : setting.type === "square"
+                  ? "aspect-square object-cover"
+                  : "aspect-video object-cover"
+              }`}
+               src={PrviewImg} alt="pre" width={600} height={600} />
                         <div  className="absolute left-2 top-2 bg-teal-300 opacity-60 cursor-pointer  rounded-4xl text-black font-bold py-1 px-3 " onClick={()=>setidEditoropen(true)}>Edit</div>
                     </div>
                 }
@@ -42,7 +49,7 @@ const Share = () => {
                 }
                 <div className="flex items-center justify-between gap-4 flex-wrap">
                     <div className="flex gap-4 flex-wrap">
-                        <input type="file" name="file" onChange={handleMedia} className="hidden" id="input" />
+                        <input accept="image/*,video/*" type="file" name="file" onChange={handleMedia} className="hidden" id="input" />
                         <label htmlFor="input">
                         <Image  className="cursor-pointer"/>
                         </label>

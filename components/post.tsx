@@ -1,8 +1,28 @@
+import Image from "next/image";
 import Imagetoolkit from "./image";
 import PostDetails from "./postdetail";
 import Posttraction from "./postinter";
+import { imagekits } from "@/utils/utils";
+ interface FileDetailsResponse{
+  filePath:string,
+  height: number,
+  width: number,
+  url:string,
+  fileType:string,
+  customMetadata?:{sensitive: boolean}
 
-const PostList = () => {
+ }
+const PostList =  async() => {
+    const getFileDetails= async( fileId:string):Promise<FileDetailsResponse>=>{
+    return new Promise((resolve,reject)=>{
+        imagekits.getFileDetails(fileId, function(error, result) {
+            if(error) reject(error);
+            else resolve(result as FileDetailsResponse);
+        });
+    })
+}
+const fileData=await getFileDetails('67d7eebc432c476416dbbca7')
+// console.log(fileData)
     return ( 
         <div className="p-4 border-y-1 border-gray-700">
             <div className="flex items-center gap-2 text-sm text-gray-500 mb-2 font-bold">
@@ -28,8 +48,10 @@ const PostList = () => {
                 <p>
                     Culpa proident commodo dolor nulla ullamco Lorem mollit proident qui dolore ullamco. Excepteur est pariatur veniam esse irure laborum cillum eiusmod aliqua ea sunt ea. Fugiat ipsum nulla mollit commodo sunt sint aliqua tempor aute excepteur et consectetur in aliqua. Occaecat tempor ad magna duis nostrud labore quis duis dolor ut fugiat. Dolor occaecat nisi commodo dolore nisi ea sint ex nulla.
                 </p>
-                <Imagetoolkit path="general/postImg.jpeg" alt='avatar'  w={600} h={600} />
-
+                {/* <Imagetoolkit path="general/postImg.jpeg" alt='avatar'  w={600} h={600} /> */}
+                    { fileData  && (<Imagetoolkit path={fileData.filePath} alt="ax" w={fileData.width} h={fileData.height}  />)
+                    
+                    }
             </div>
             <Posttraction/>
         </div>

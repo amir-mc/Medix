@@ -1,4 +1,4 @@
-import { Bookmark, Command,Pen, Group,Bell, Handshake, Home, HomeIcon, Lightbulb, MoreHorizontal, PersonStanding, Search, X, Twitter, LetterText, PlusCircleIcon } from "lucide-react";
+import { Bookmark, Command,Pen, Group,Bell, Handshake, Home, HomeIcon, Lightbulb, MoreHorizontal, PersonStanding, Search, X, Twitter, LetterText, PlusCircleIcon, Network } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,46 +42,51 @@ const Leftbar = () => {
             icon:<MoreHorizontal/>
         }
     ]
-    return ( 
+    return  (
         <div className="h-screen sticky top-0 flex flex-col justify-between pt-2 pb-8">
-           <div className="flex flex-col gap-4 text-lg items-center xxl:items-start">
-                <Link href="/">
-                    <Twitter></Twitter>
-                </Link>  
-                <div className="flex flex-col gap-4 ">
-                    {
-                        menuLsit.map((list)=>(  
-                                    <Link key={list.id} className="p-2 rounded-full hover:bg-gray-400 flex items-center gap-4 " href={list.link} >
-                                     {list.icon}
-                                    <span className="hidden xxl:inline">{list.name}</span>  
-                                    </Link>
-                        ))
-                    }
-                </div>
-                <Link href='/' className="xxl:hidden text-black bg-white rounded-full py-2  px-20  items-center justify-center">
-                <LetterText/>
+          <div className="flex flex-col gap-4 text-lg items-center xxl:items-start">
+            <Link href="/" className="p-2 rounded-full hover:bg-[#181818] ">
+              <Twitter/>
+            </Link>
+            <div className="flex flex-col gap-4">
+              {menuLsit.map((item) => (
+                <Link
+                  href={item.link}
+                  className="p-2 rounded-full hover:bg-[#181818] flex items-center gap-4"
+                  key={item.id}
+                >
+                  {item.icon}
+                  <span className="hidden xxl:inline">{item.name}</span>
                 </Link>
-                <Link href='/' className="hidden xxl:block text-black bg-white rounded-full py-2  px-20 ">
-                POST
-                </Link>
-           </div>
-           <div className="flex items-center justify-between">
-                    <div className="felx items-center gap-2 ">
-                        
-                            <div className="w-10 h-10 relative rounded-full overflow-hidden">
-                                <Image src='/general/af.JPG' alt="az " fill/>
-                            </div>
-                            <div className="hidden xxl:flex flex-col">
-                                <span className="font-bold">AMIR</span>
-                                <span className="text-sm text-gray-500">@amir</span>
-                            </div>
-                    </div>
-                     <div className="hidden xxl:block cursor-pointer font-bold">
-                            ...
-                        </div>
-           </div>
+              ))}
+            </div>
+            <Link
+              href="/compose/post"
+              className="bg-white text-black rounded-full w-12 h-12 flex items-center justify-center xxl:hidden"
+            >
+              <LetterText/>
+            </Link>
+            <Link
+              href="/compose/post"
+              className="hidden xxl:block bg-white text-black rounded-full font-bold py-2 px-20"
+            >
+              Post
+            </Link>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 relative rounded-full overflow-hidden">
+                <Image src='/general/af.JPG' alt="profile" fill  />
+              </div>
+              <div className="hidden xxl:flex flex-col">
+                <span className="font-bold">Amir</span>
+                <span className="text-sm text-textGray">@AMIR</span>
+              </div>
+            </div>
+            <div className="hidden xxl:block cursor-pointer font-bold">...</div>
+          </div>
         </div>
-     );
+      );
 }
  
 export default Leftbar;

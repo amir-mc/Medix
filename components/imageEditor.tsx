@@ -30,7 +30,7 @@ const ImageEditor = ({
     return (
         <div className=" fixed inset-0 bg-black/80 flex items-center justify-center p-4">
       <div className="bg-gray-900 text-white rounded-2xl shadow-lg p-6 w-full max-w-lg flex flex-col gap-6">
-          {/* TOP */}
+      
 
             <div className="flex items-center gap-8  justify-center">
               <X 
@@ -42,7 +42,7 @@ const ImageEditor = ({
               Save
             </button>
       
-          {/* IMAGE CONTAINER */}
+        
           <div className="w-[300px] h-[300px] flex items-center">
             <Image
               src={PrviewImg}
@@ -58,7 +58,7 @@ const ImageEditor = ({
               }`}
             />
           </div>
-          {/* SETTINGS */}
+     
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-8">
               <div
