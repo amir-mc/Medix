@@ -3,6 +3,7 @@ import Imagetoolkit from "./image";
 import PostDetails from "./postdetail";
 import Posttraction from "./postinter";
 import { imagekits } from "@/utils/utils";
+import Videotool from "./video";
  interface FileDetailsResponse{
   filePath:string,
   height: number,
@@ -21,8 +22,8 @@ const PostList =  async() => {
         });
     })
 }
-const fileData=await getFileDetails('67d7eebc432c476416dbbca7')
-// console.log(fileData)
+const fileData=await getFileDetails('67d96366432c476416ffcda7')
+ console.log(fileData)
     return ( 
         <div className="p-4 border-y-1 border-gray-700">
             <div className="flex items-center gap-2 text-sm text-gray-500 mb-2 font-bold">
@@ -49,7 +50,8 @@ const fileData=await getFileDetails('67d7eebc432c476416dbbca7')
                     Culpa proident commodo dolor nulla ullamco Lorem mollit proident qui dolore ullamco. Excepteur est pariatur veniam esse irure laborum cillum eiusmod aliqua ea sunt ea. Fugiat ipsum nulla mollit commodo sunt sint aliqua tempor aute excepteur et consectetur in aliqua. Occaecat tempor ad magna duis nostrud labore quis duis dolor ut fugiat. Dolor occaecat nisi commodo dolore nisi ea sint ex nulla.
                 </p>
                 {/* <Imagetoolkit path="general/postImg.jpeg" alt='avatar'  w={600} h={600} /> */}
-                    { fileData  && (<Imagetoolkit path={fileData.filePath} alt="ax" w={fileData.width} h={fileData.height}  />)
+                    { fileData  && fileData.fileType==='image' ? (<Imagetoolkit path={fileData.filePath} alt="ax" w={fileData.width} h={fileData.height}  />
+                    ):<Videotool path={fileData.filePath} />
                     
                     }
             </div>

@@ -30,7 +30,7 @@ const Share = () => {
                 </div> 
                 <div className="flex-1 flex flex-col gap-4">
                     <input type="text" name="des" placeholder="Looking for something "  className="bg-transparent outline-none placeholder:text-gray-500"/>
-                {PrviewImg &&
+                {media?.type.includes("image") && PrviewImg &&
                     <div className="relative rounded-2xl overflow-hidden">
                         <NextImage   className={`w-full ${
                 setting.type === "original"
@@ -41,6 +41,14 @@ const Share = () => {
               }`}
                src={PrviewImg} alt="pre" width={600} height={600} />
                         <div  className="absolute left-2 top-2 bg-teal-300 opacity-60 cursor-pointer  rounded-4xl text-black font-bold py-1 px-3 " onClick={()=>setidEditoropen(true)}>Edit</div>
+                    </div>
+                }
+                {
+                    media?.type.includes('video') && PrviewImg &&
+                    <div className="relative">
+
+                    <video  src={PrviewImg} controls  />
+                    <div className="absolute top-2 left-2  bg-black opacity-50 text-white h-8 w-8  flex items-center justify-between rounded-full cursor-pointer font-bold text-sm " onClick={()=>setMedia(null)} >X </div>
                     </div>
                 }
                 {
