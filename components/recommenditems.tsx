@@ -1,5 +1,6 @@
 'use client'
 
+import Link from "next/link";
 import { useState } from "react";
 
 const Recommended = () => {
@@ -33,7 +34,7 @@ const Recommended = () => {
       <ul className="space-y-4">
         {users.map((user) => (
           <li key={user.id} className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 pb-2">
               <img
                 src={user.avatar}
                 alt={`${user.name}'s avatar`}
@@ -57,6 +58,7 @@ const Recommended = () => {
           </li>
         ))}
       </ul>
+      <Link href='/' className="text-blue-400  ">Show more</Link>
     </div>
         
      );
