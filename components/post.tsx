@@ -22,8 +22,8 @@ const PostList =  async() => {
         });
     })
 }
-const fileData=await getFileDetails('67d96366432c476416ffcda7')
- console.log(fileData)
+const fileData=await getFileDetails('67d7d3bb432c4764163c5e6a')
+ //console.log(fileData)
     return ( 
         <div className="p-4 border-y-1 border-gray-700">
             <div className="flex items-center gap-2 text-sm text-gray-500 mb-2 font-bold">
