@@ -28,7 +28,7 @@ const fileData=await getFileDetails('67d7d3bb432c4764163c5e6a')
         <div className="p-4 border-y-1 border-gray-700">
             <div className="flex items-center gap-2 text-sm text-gray-500 mb-2 font-bold">
                 ico
-                <span>mir</span>
+                <span>Amir</span>
             </div>
             <div className="flex gap-4">
                 <Imagetoolkit path="general/userImg.jpeg" alt='avatar' className=' rounded-full '  w={80} h={80} />

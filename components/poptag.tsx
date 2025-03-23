@@ -12,14 +12,14 @@ const PopularTag = () => {
         console.log('Clicked tag:', tag);
       };
     return ( 
-        <div className="bg-black  rounded-lg shadow-md p-1 w-80">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">Popular Tags</h2>
+        <div className="bg-black  rounded-lg shadow-md p-1 w-80 border-x-2 border-gray-500">
+      <h2 className="text-xl font-bold text-gray-800 mb-4 ">Popular Tags</h2>
       <ul className="space-y-3">
         {tags.map((tag) => (
           <li
             key={tag.id}
            
-            className="flex justify-between items-center cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors"
+            className="flex justify-between items-center cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors border-y-1 border-gray-700"
           >
             <span className="text-blue-500 font-medium">{tag.name}</span>
             <span className="text-sm text-gray-500">{tag.count} posts</span>
