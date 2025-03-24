@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Imagetoolkit from "./image";
 
 const Recommended = () => {
     type User = {
@@ -35,11 +36,8 @@ const Recommended = () => {
         {users.map((user) => (
           <li key={user.id} className="flex items-center justify-between">
             <div className="flex items-center space-x-3 pb-2">
-              <img
-                src={user.avatar}
-                alt={`${user.name}'s avatar`}
-                className="w-10 h-10 rounded-full"
-              />
+              
+               <Imagetoolkit path="general/userImg.jpeg"    alt={`${user.name}'s avatar`} className='rounded-full'  w={50} h={50} />
               <div>
                 <p className="font-semibold text-sm">{user.name}</p>
                 <p className="text-sm text-gray-500">{user.username}</p>

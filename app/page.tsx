@@ -12,9 +12,7 @@ const Homepage = () => {
         <Link href="/" className="pb-3 flex items-center border-b-4 border-b-blue-700">For you</Link>
         <Link href="/" className="pb-3 flex items-center ">ALL</Link>
         <Link href="/" className="pb-3 flex items-center ">ALL</Link>
-        <Link href="/" className="pb-3 flex items-center ">ALL</Link>
-        <Link href="/" className="pb-3 flex items-center ">ALL</Link>
-        <Link href="/" className="pb-3 flex items-center ">ALL</Link>
+
       </div>
 <Share/>
 <Feed/>

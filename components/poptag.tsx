@@ -12,7 +12,7 @@ const PopularTag = () => {
         console.log('Clicked tag:', tag);
       };
     return ( 
-        <div className="bg-black  rounded-lg shadow-md p-1 w-80 border-x-2 border-gray-500">
+        <div className="bg-black   shadow-md p-3 w-80 border-2 rounded-3xl border-gray-700">
       <h2 className="text-xl font-bold text-gray-800 mb-4 ">Popular Tags</h2>
       <ul className="space-y-3">
         {tags.map((tag) => (
