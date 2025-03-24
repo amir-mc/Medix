@@ -11,7 +11,7 @@ import Videotool from "./video";
   url:string,
   fileType:string,
   customMetadata?:{sensitive: boolean}
-
+ 
  }
 const PostList =  async() => {
     const getFileDetails= async( fileId:string):Promise<FileDetailsResponse>=>{
