@@ -1,4 +1,4 @@
-import { Bookmark, Command,Pen, Group,Bell, Handshake, Home, HomeIcon, Lightbulb, MoreHorizontal, PersonStanding, Search, X, Twitter, LetterText, PlusCircleIcon, Network } from "lucide-react";
+import {  Group,Bell, HomeIcon, MoreHorizontal, PersonStanding, Search, Twitter, LetterText,  } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -1,5 +1,5 @@
 'use client'
-import { Calendar, Check, CheckCheck, CheckCircle, Gift, Image, List, LocateIcon, Option, OptionIcon, PaintRoller, Smile, SpellCheck } from "lucide-react";
+import { Calendar, Gift, Image, List, LocateIcon, Smile } from "lucide-react";
 import Imagetoolkit from "./image";
 import { useState } from "react";
 import { ShareAction } from "@/action/action";

@@ -7,10 +7,7 @@ const PopularTag = () => {
         { id: 5, name: '#OpenAI', count: 321 },
       ];
     
-      const handleTagClick = (tag: string) => {
-        // Handle tag click (e.g., search for the tag)
-        console.log('Clicked tag:', tag);
-      };
+   
     return ( 
         <div className="bg-black   shadow-md p-3 w-80 border-2 rounded-3xl border-gray-700">
       <h2 className="text-xl font-bold text-gray-800 mb-4 ">Popular Tags</h2>

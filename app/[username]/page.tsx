@@ -1,6 +1,6 @@
 import Feed from "@/components/feed";
 import Imagetoolkit from "@/components/image";
-import { Calendar, ExternalLinkIcon, ListTree, Mail, MapPin, MoreHorizontalIcon, PowerOff, Search } from "lucide-react";
+import { Calendar, ExternalLinkIcon , Mail, MapPin, MoreHorizontalIcon, Search } from "lucide-react";
 import Link from "next/link";
 
 const Username = () => {

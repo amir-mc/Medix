@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Imagetoolkit from "./image";
 import PostDetails from "./postdetail";
 import Posttraction from "./postinter";
@@ -55,7 +54,7 @@ const fileData=await getFileDetails('67d7d3bb432c4764163c5e6a')
                 </p>
                 </Link>
                 {/* <Imagetoolkit path="general/postImg.jpeg" alt='avatar'  w={600} h={600} /> */}
-                    { fileData  && fileData.fileType==='image' ? (<Imagetoolkit path={fileData.filePath} alt="ax" w={fileData.width} h={fileData.height}  />
+                    { fileData  && fileData.fileType==='image' ? (<Imagetoolkit path={fileData.filePath} className={''} alt="ax" w={fileData.width} h={fileData.height}  />
                     ):<Videotool path={fileData.filePath} />
                     
                     }

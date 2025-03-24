@@ -1,7 +1,7 @@
 'use client'
 
 import Imagetoolkit from "@/components/image";
-import { Bold, CalendarCheck2, Gift, Image, ListPlus, MapPin, Smile } from "lucide-react";
+import {  CalendarCheck2, Gift, Image, ListPlus, MapPin, Smile } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const PostModal = () => {

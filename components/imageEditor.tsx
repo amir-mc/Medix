@@ -1,6 +1,6 @@
 import {  X } from "lucide-react";
 import Image from "next/image";
-import { Dispatch, SetStateAction } from "react";
+
 
 const ImageEditor = ({
     onClose,

@@ -12,7 +12,7 @@ const Recommended = () => {
         avatar: string;
         isFollowing: boolean;
       };
-    const [users, setUsers] = useState<User[]>([
+    const [users] = useState<User[]>([
         {
           id: 1,
           name: 'Elon Musk',

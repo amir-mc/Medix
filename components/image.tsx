@@ -10,7 +10,7 @@ type imagetype={
     tr?:boolean
 }
 const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
-const Imagetoolkit = ({path,w,h,alt,tr,className}) => {
+const Imagetoolkit = ({path,w,h,alt,tr,className}:imagetype) => {
     return ( 
         <IKImage
       urlEndpoint={urlEndpoint}
