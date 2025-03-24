@@ -2,12 +2,12 @@
 import { Bookmark, ChartNoAxesColumn, Heart, MessageCircle, Repeat2 } from "lucide-react";
 import { useState } from "react";
 
-const Posttraction = () => {
+const Posttraction = ({type}:{type?:'status'|'comment'}) => {
     const[active,Isactive]=useState(false)
     const[activeLove,IsactiveLove]=useState(false)
     return ( 
-        <div className="col-4 mt-2 flex items-center justify-between  ">
-            <div className=" cursor-pointer">
+        <div className={`col-4 mt-2 flex items-center justify-between ${type==='comment' && 'text-sm pr-20 pl-20'} `}>
+            <div className= {`cursor-pointer `}>
             <Bookmark   onClick={() => Isactive((prev) => !prev)}  className={active?'fill-white':''} />157
                 
             </div>

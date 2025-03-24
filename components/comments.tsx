@@ -1,6 +1,5 @@
 import Imagetoolkit from "./image";
 import Posttraction from "./postinter";
-import Posttractioncomment from "./postintercomment";
 const text=[
     {
         id:1,
@@ -39,20 +38,16 @@ const Comments = () => {
             
             <div className="flex gap-4">
               
-                <Imagetoolkit path="general/userImg.jpeg" alt='avatar' className=' rounded-full ' tr={true}  w={80} h={80} />
+                <Imagetoolkit path="general/userImg.jpeg" alt='avatar' className=' rounded-full '  w={80} h={80} />
                 {item.text}
                 {item.text}
-            </div>
-        
-                          
-        
-        {/* <Posttractioncomment/> */}
-        <Posttraction/>
+            </div>            
+        <Posttraction type='comment'/>
         </div>
          ))
         }
         </div>
      );
-}
+}   
  
 export default Comments;
